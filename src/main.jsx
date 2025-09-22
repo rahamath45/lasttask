@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://passwordreset-1-r8eb.onrender.com"
+axios.defaults.baseURL = "https://passwordreset-2-cisz.onrender.com"
 
 createRoot(document.getElementById('root')).render(
 <BrowserRouter>

@@ -8,13 +8,14 @@ function ResetPassword() {
   const { token } = useParams();
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
-
+    const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(`/api/reset/reset-password/${token}`, { password });
       setMsg(res.data.message);
+       navigate("/")
     } catch (err) {
       setMsg(err.response?.data?.message || "Something went wrong");
     }

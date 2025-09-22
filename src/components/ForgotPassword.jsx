@@ -2,17 +2,19 @@
 
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
-
+ const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post("/api/reset/forgot-password", { email });
       console.log(res)
       setMsg(res.data.message);
+      navigate("/")
     } catch (err) {
       setMsg(err.response?.data?.message || "Something went wrong");
     }

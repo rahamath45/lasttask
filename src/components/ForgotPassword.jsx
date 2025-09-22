@@ -11,6 +11,7 @@ function ForgotPassword() {
     e.preventDefault();
     try {
       const res = await axios.post("/api/reset/forgot-password", { email });
+      console.log(res)
       setMsg(res.data.message);
     } catch (err) {
       setMsg(err.response?.data?.message || "Something went wrong");

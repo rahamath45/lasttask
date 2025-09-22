@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 function Register() {
@@ -9,12 +10,14 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post("/api/auth/register", { name, email, password });
               setMsg(res.data.message);
+             navigate("/login")
     } catch (err) {
       setMsg(err.response?.data?.message || "Something went wrong");
     }

@@ -25,18 +25,21 @@ function Register() {
   };
 
   return (
-    <div className="card p-4">
-      <h3>Register</h3>
-      <form onSubmit={handleSubmit}>
-        <input className="form-control mb-2" placeholder="Name"
-          value={name} onChange={(e) => setName(e.target.value)} required />
-        <input className="form-control mb-2" type="email" placeholder="Email"
-          value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input className="form-control mb-2" type="password" placeholder="Password"
-          value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button className="btn btn-primary w-100">Register</button>
+    <div className="max-w-md mx-auto mt-10 p-8 bg-white rounded-2xl shadow-lg ">
+      <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">Register</h3>
+      <form onSubmit={handleSubmit} className="flex gap-3 flex-col pt-6">
+        <input  placeholder="Name"
+          value={name} onChange={(e) => setName(e.target.value)} required 
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"/>
+        <input  type="email" placeholder="Email"
+          value={email} onChange={(e) => setEmail(e.target.value)} required 
+           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"/>
+        <input  type="password" placeholder="Password"
+          value={password} onChange={(e) => setPassword(e.target.value)} required 
+           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"/>
+        <button  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors duration-200">Register</button>
       </form>
-      {msg && <p className="mt-3">{msg}</p>}
+      {msg && <p className="mt-4 text-center text-red-500">{msg}</p>}
     </div>
   );
 }

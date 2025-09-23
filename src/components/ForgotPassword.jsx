@@ -19,12 +19,12 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="card p-4">
-      <h3>Forgot Password</h3>
-      <form onSubmit={handleSubmit}>
-        <input className="form-control mb-2" type="email" placeholder="Enter email"
+    <div className="max-w-md mx-auto mt-10 p-8 bg-white rounded-2xl shadow-lg ">
+      <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">Forgot Password</h3>
+      <form onSubmit={handleSubmit} className="flex gap-3 flex-col pt-6">
+        <input  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" type="email" placeholder="Enter email"
           value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <button className="btn btn-warning w-100">Send Reset Link</button>
+        <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-lg transition-colors duration-200">Send Reset Link</button>
       </form>
       {msg && <p className="mt-3">{msg}</p>}
     </div>
